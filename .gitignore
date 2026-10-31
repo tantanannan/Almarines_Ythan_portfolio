@@ -1,0 +1,32 @@
+# Files that stay on this computer and are never uploaded.
+# Nothing here is deleted: Git just leaves these files out of the published website.
+
+# Original source images (the site uses smaller web copies of these)
+/images/Almarines_Ythan_profile.gif
+/images/Almarines_Ythan_profilewithshades.jpg
+/images/VERTICAL LOGO.jpg
+/images/color pallete.jpg
+/images/cover 1.jpg
+/images/cover 2 dark.jpg
+/images/Freecodecamp.png
+/images/networking.png
+/images/logo/ICON LOGO.jpg
+
+# "Put your file here" notes
+/images/logo/README.txt
+/files/README.txt
+
+# Blank project page used to start new projects (it would show "Project not found" online)
+/projects/_template/
+
+# Design source files and archives
+*.psd
+*.ai
+*.zip
+
+# System and editor files
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+*.tmp

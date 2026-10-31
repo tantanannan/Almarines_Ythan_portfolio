@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ythan Almarines | From Sketch to Screen</title>
+  <meta name="description" content="From Sketch to Screen: a graphic design portfolio that follows each idea from paper sketch to finished digital artwork.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Before first paint: apply a saved theme, and allow motion unless the visitor asked for less.
+       If this does not run, the page simply shows without animation. -->
+  <script>(function (d) { d.classList.add('js'); try { var t = localStorage.getItem('sts-theme'); if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t); } catch (e) {} if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('motion'); })(document.documentElement);</script>
+</head>
+<!-- data-root="" means this page is in the main folder. Project pages use "../../". -->
+<body data-root="">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="Logo, back to the top of the homepage">
+      <img src="images/logo/logo.jpg" alt="" width="192" height="192" decoding="async">
+    </a>
+    <nav class="nav-desktop" aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about"><sup>01</sup>About</a></li>
+        <li><a href="#skills"><sup>02</sup>Skills</a></li>
+        <li><a href="#experience"><sup>03</sup>Experience</a></li>
+        <li><a href="#education"><sup>04</sup>Education</a></li>
+        <li><a href="#projects"><sup>05</sup>Projects</a></li>
+        <li><a href="#cv"><sup>07</sup>CV</a></li>
+        <li><a href="#contact"><sup>08</sup>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn theme-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menu-open" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 8h18M3 16h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden>
+  <div class="wrap">
+    <div class="menu-top">
+      <a class="logo" href="#home" aria-label="Logo, back to the top of the homepage">
+        <img src="images/logo/logo.jpg" alt="" width="192" height="192" decoding="async">
+      </a>
+      <button class="icon-btn" id="menu-close" type="button" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile">
+      <ol>
+        <li><a href="#home"><span class="num mono">00</span><span class="label">Home</span></a></li>
+        <li><a href="#about"><span class="num mono">01</span><span class="label">About</span></a></li>
+        <li><a href="#skills"><span class="num mono">02</span><span class="label">Skills</span></a></li>
+        <li><a href="#experience"><span class="num mono">03</span><span class="label">Experience</span></a></li>
+        <li><a href="#education"><span class="num mono">04</span><span class="label">Education</span></a></li>
+        <li><a href="#projects"><span class="num mono">05</span><span class="label">Projects</span></a></li>
+        <li><a href="#cv"><span class="num mono">07</span><span class="label">CV</span></a></li>
+        <li><a href="#contact"><span class="num mono">08</span><span class="label">Contact</span></a></li>
+      </ol>
+    </nav>
+    <p class="menu-foot mono">From Sketch to Screen &middot; Graphic design portfolio</p>
+  </div>
+</div>
+
+<!-- INTRO COVER: the first screen, under the header. Only your photo, name and tagline.
+     The backgrounds are images/cover/cover-light.jpg and images/cover/cover-dark.jpg, one per theme,
+     set in css/style.css (INTRO COVER). To change one, replace that file. -->
+<section class="intro" id="home" aria-labelledby="intro-name">
+  <div class="intro-bg" aria-hidden="true">
+    <div class="ib-layer ib-far" data-exit>
+      <div class="wrap ib-grid"><span></span><span></span><span></span><span></span></div>
+      <span class="ib-hline"></span>
+    </div>
+  </div>
+
+  <div class="wrap intro-inner">
+    <figure class="intro-photo" data-exit>
+      <span class="ip-block" aria-hidden="true"></span>
+      <div class="ip-mask">
+        <!-- Your profile photo, one for each theme. Only the one that matches the theme is shown and downloaded.
+             The frame is 4:5, so a square photo is trimmed a little at the sides. -->
+        <div class="ip-inner">
+          <img class="ip-img photo-light" src="images/profile-light-web.jpg" alt="Portrait of Ythan Almarines" width="960" height="960" loading="lazy" decoding="async" fetchpriority="high">
+          <img class="ip-img photo-dark" src="images/profile-dark-web.jpg" alt="Portrait of Ythan Almarines wearing sunglasses" width="1000" height="1000" loading="lazy" decoding="async" fetchpriority="high">
+        </div>
+      </div>
+    </figure>
+    <div class="intro-text">
+      <h1 class="intro-name" id="intro-name" data-exit>
+        <span class="line"><span class="in-hi">Hi, I&rsquo;m</span></span>
+        <span class="line"><span class="in-name">Ythan<br>Almarines<span class="in-dot">.</span><svg class="scribble" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M6 24 C 90 14, 190 30, 300 20 S 480 12, 594 22 M 40 32 C 160 26, 330 34, 560 28"/></svg></span></span>
+      </h1>
+      <p class="intro-tagline" data-exit><span>Think it. Sketch it. Create it.</span></p> <!-- Your tagline -->
+    </div>
+  </div>
+
+  <a class="intro-cue" href="#main" data-exit><span class="cue-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg></span><span class="sr-only">Scroll to the portfolio</span></a>
+</section>
+
+
+<main id="main">
+
+  <!-- WELCOME: continues from the intro cover. A smaller, personal version of it: your photo, name and
+       tagline again, with your introduction, the main actions and a few quick facts. -->
+  <section class="hero" id="welcome" aria-labelledby="hero-title">
+    <div class="wrap grid">
+      <div class="hero-main" data-stagger=":scope > *">
+        <p class="hero-eyebrow mono"><span>Graphic designer</span><span>From Sketch to Screen</span><span>Portfolio 2026</span></p>
+        <h2 class="hero-title" id="hero-title"><span class="hi">Hi, I&rsquo;m</span> <span class="name">Ythan Almarines<span class="in-dot">.</span></span></h2>
+        <p class="tagline">Think it. Sketch it. Create it.</p> <!-- Same tagline as the cover -->
+        <p class="lead">I&rsquo;m a third-year BSIT student at City College of Calamba in Laguna, working toward a career in information technology. I design logos, posters and social media graphics in Photoshop and Canva, and I build websites with HTML, CSS and JavaScript. Every project here starts as a pencil sketch.</p> <!-- Introduction, written from your CV and your projects; edit freely -->
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View My Projects <span class="arr" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn-outline" href="#cv">Download CV <span class="mono">PDF</span></a>
+          <a class="link-arrow" href="#contact">Contact Me <span class="arr" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+
+      <figure class="hero-side" data-stagger=":scope > *">
+        <div class="portrait">
+          <!-- Your profile photo, one for each theme, shown as an oval -->
+          <img class="photo-light" src="images/profile-light-web.jpg" alt="Portrait of Ythan Almarines" width="960" height="960" loading="lazy" decoding="async">
+          <img class="photo-dark" src="images/profile-dark-web.jpg" alt="Portrait of Ythan Almarines wearing sunglasses" width="1000" height="1000" loading="lazy" decoding="async">
+        </div>
+      </figure>
+
+      <dl class="hero-facts mono rule-draw" data-stagger=":scope > div">
+        <div><dt>Based in</dt><dd>Calamba City, Laguna, Philippines</dd></div>
+        <div><dt>Focus</dt><dd>Logos, posters, web design</dd></div> <!-- From your projects; edit freely -->
+        <div><dt>Status</dt><dd>3rd year student</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ABOUT: a magazine profile. One big opening line, then image and text side by side. -->
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="about-top reveal">
+        <p class="sec-index mono"><span class="n">01</span><span id="about-title" class="as-h2" role="heading" aria-level="2">About me</span></p>
+        <p class="about-lede">I bring ideas to life through creativity and technology.</p>
+      </div>
+      <div class="grid about-grid">
+        <figure class="about-figure reveal" data-reveal="zoom">
+          <!-- Web copy of images/VERTICAL LOGO.jpg (1000 px) -->
+          <div class="about-img"><img src="images/about-vertical-logo.jpg" alt="Moneyfesting vertical logo: a gold coin with a green shamrock above the word moneyfesting" width="1000" height="1000" loading="lazy" decoding="async"></div>
+          <figcaption class="mono">Fig. 01 &mdash; Moneyfesting, because I love money</figcaption>
+        </figure>
+
+        <div class="about-body" data-stagger=":scope > *">
+          <p class="about-p">I&rsquo;m a third-year BSIT student at City College of Calamba with an interest in graphic design, web development, and technology. I hold a TESDA National Certificate II in Computer Systems Servicing and a freeCodeCamp Responsive Web Design certification, and I built both the front end and back end of BettaCart, an ordering system for betta fish buyers, as an academic project. I enjoy combining creativity with technical skills, and I keep improving through hands-on practice, from designs in Photoshop and Canva to configuring networks in Cisco Packet Tracer.</p> <!-- Biography: your text, updated with your experience; edit freely -->
+          <p class="about-p"><strong>What inspires me.</strong> I find inspiration in everyday creativity, modern digital designs, and the endless possibilities of technology. I enjoy discovering new ideas and exploring different ways to turn them into something visually meaningful.</p>
+          <blockquote class="about-quote">
+            <p>Good design is not just about looking great &mdash; it&rsquo;s about making ideas clear, creative, and meaningful.</p>
+            <footer class="mono">Design philosophy</footer>
+          </blockquote>
+          <p class="about-p"><strong>Next.</strong> I aim to gain more experience in graphic design and Information Technology, expand my creative and technical skills, and continue growing professionally.</p>
+        </div>
+      </div>
+
+      <div class="glance">
+        <p class="glance-title mono reveal">At a glance</p>
+        <dl class="rule-draw" data-stagger=":scope > div">
+          <div><dt class="mono">Full name</dt><dd>Ythan P. Almarines</dd></div>
+          <div><dt class="mono">Education</dt><dd>BSIT, City College of Calamba</dd></div>
+          <div><dt class="mono">Occupation</dt><dd>3rd year student; previously production operator</dd></div>
+          <div><dt class="mono">Technical interests</dt><dd>Computer hardware, IT support, basic networking</dd></div>
+          <div><dt class="mono">Focus</dt><dd>Logos, posters, web design</dd></div> <!-- Same as the Focus fact in the welcome section -->
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS: a typographic index. Each group is set the way that kind of skill looks. -->
+  <section class="section skills" id="skills" aria-labelledby="skills-title">
+    <div class="wrap grid">
+      <header class="skills-head reveal">
+        <p class="sec-index mono"><span class="n">02</span><span>Skills</span></p>
+        <h2 class="sec-title" id="skills-title">Tools, craft and the way I work</h2>
+      </header>
+      <div class="skills-body">
+        <div class="sk sk-tools" data-stagger=":scope > .sk-cat, :scope > .sk-list > li">
+          <h3 class="sk-cat mono"><span>02.1</span>Design tools</h3>
+          <ul class="sk-list">
+            <li>Photoshop</li><li>Canva</li><li>Figma</li><li>VS Code</li> <!-- Photoshop, Canva, VS Code: your project screenshots; Figma: your wireframe -->
+          </ul>
+        </div>
+        <div class="sk sk-practice" data-stagger=":scope > .sk-cat, :scope > .sk-list > li">
+          <h3 class="sk-cat mono"><span>02.2</span>Design practice</h3>
+          <ul class="sk-list">
+            <li>Branding</li><li>Layout</li><li>Typography</li> <!-- Each shown by a project: logo sets, posters and post, CAMOU typography poster -->
+          </ul>
+        </div>
+        <div class="sk sk-web" data-stagger=":scope > .sk-cat, :scope > .sk-list > li">
+          <h3 class="sk-cat mono"><span>02.3</span>Web &amp; IT</h3>
+          <ul class="sk-list">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>MySQL</li><li>Java</li><li>C++</li><li>Networking &amp; troubleshooting</li> <!-- From the core skills on your CV -->
+          </ul>
+        </div>
+        <div class="sk sk-soft" data-stagger=":scope > .sk-cat, :scope > .sk-list > li">
+          <h3 class="sk-cat mono"><span>02.4</span>Soft skills</h3>
+          <ul class="sk-list">
+            <li>Problem-solving</li><li>Critical thinking</li><li>Teamwork</li><li>Collaboration</li><li>Communication</li><li>Time management</li> <!-- From the core skills on your CV -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE: one continuous pencil line through time -->
+  <section class="section experience" id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <header class="grid sec-head reveal">
+        <p class="sec-index mono"><span class="n">03</span><span>Experience</span></p>
+        <h2 class="sec-title" id="exp-title">Where the work happened</h2>
+        <p class="sec-dek">Work, certifications and projects so far, oldest first. Open &ldquo;View proof&rdquo; to see each one.</p>
+      </header>
+      <ol class="timeline" id="timeline" data-stagger=":scope > .entry">
+        <!-- From the work experience on your CV. To add a role, copy this <li> block. -->
+        <li class="entry">
+          <p class="entry-dates mono">June 2025 &ndash; July 2025</p>
+          <div class="entry-main">
+            <h3>Production operator</h3>
+            <p class="org">Containerboard &amp; Packaging Company Inc.</p>
+            <p class="entry-text">In charge of gluing and assembling boxes.</p>
+          </div>
+        </li>
+        <!-- Proof images: web copies in images/proof/ (your originals stay in images/) -->
+        <li class="entry">
+          <p class="entry-dates mono">September 2025 &ndash; November 2025</p>
+          <div class="entry-main">
+            <h3>Legacy Responsive Web Design V8 Developer Certification</h3>
+            <p class="org">freeCodeCamp.org</p>
+            <p class="entry-text">About 300 hours of coursework, completed November 18, 2025.</p>
+            <p class="entry-proof"><a class="proof-link mono" href="images/proof/freecodecamp.png" data-proof="freeCodeCamp certificate, Legacy Responsive Web Design V8">View proof <span aria-hidden="true">&nearr;</span></a></p>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="entry-dates mono">Issued July 2026</p>
+          <div class="entry-main">
+            <h3>Computer Systems Servicing NC II</h3>
+            <p class="org">Technical Education and Skills Development Authority (TESDA)</p>
+            <p class="entry-text">National Certificate II, valid until July 2031.</p>
+            <p class="entry-proof"><a class="proof-link mono" href="images/proof/ncii.jpg" data-proof="TESDA National Certificate II, Computer Systems Servicing">View proof <span aria-hidden="true">&nearr;</span></a></p>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="entry-dates mono">August 2026 &ndash; October 2026</p>
+          <div class="entry-main">
+            <h3>BettaCart: A Web-Based Ordering Management System for Betta Fish Buyers</h3>
+            <p class="org">Academic project &middot; City College of Calamba</p>
+            <p class="entry-text">In charge of the front end and back end of the system (full stack).</p>
+            <p class="entry-proof"><a class="proof-link mono" href="images/proof/bettacart.jpg" data-proof="BettaCart home page, running locally">View proof <span aria-hidden="true">&nearr;</span></a></p>
+          </div>
+        </li>
+        <li class="entry">
+          <p class="entry-dates mono">August 2026 &ndash; Present</p>
+          <div class="entry-main">
+            <h3>Cisco Packet Tracer networking lab</h3>
+            <p class="org">City College of Calamba</p>
+            <p class="entry-text">In charge of configuring the network.</p>
+            <p class="entry-proof"><a class="proof-link mono" href="images/proof/networking.jpg" data-proof="Network topology in Cisco Packet Tracer">View proof <span aria-hidden="true">&nearr;</span></a></p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section edu-band" id="education" aria-labelledby="edu-title">
+    <div class="wrap">
+      <header class="grid sec-head reveal">
+        <p class="sec-index mono"><span class="n">04</span><span>Education</span></p>
+        <h2 class="sec-title" id="edu-title">Education</h2>
+      </header>
+      <div class="grid">
+        <div class="edu-main">
+          <ol class="edu-list rule-draw" data-stagger=":scope > li">
+            <!-- From the education on your CV, newest first -->
+            <li class="edu-entry">
+              <p class="edu-years mono">2024 &ndash; Present</p>
+              <div class="edu-body">
+                <h3>Bachelor of Science in Information Technology (BSIT)</h3>
+                <p class="edu-school">City College of Calamba</p>
+                <dl class="edu-meta mono">
+                  <div><dt>Level</dt><dd>Tertiary</dd></div>
+                  <div><dt>Status</dt><dd>3rd year, ongoing</dd></div>
+                </dl>
+              </div>
+            </li>
+            <li class="edu-entry">
+              <p class="edu-years mono">2022 &ndash; 2024</p>
+              <div class="edu-body">
+                <h3>Senior High School</h3>
+                <p class="edu-school">Bubuyan Integrated School</p>
+                <dl class="edu-meta mono">
+                  <div><dt>Strand</dt><dd>Humanities and Social Sciences (HUMSS)</dd></div>
+                </dl>
+              </div>
+            </li>
+            <li class="edu-entry">
+              <p class="edu-years mono">2018 &ndash; 2022</p>
+              <div class="edu-body">
+                <h3>Junior High School</h3>
+                <p class="edu-school">Bubuyan Integrated School</p>
+              </div>
+            </li>
+            <li class="edu-entry">
+              <p class="edu-years mono">2012 &ndash; 2018</p>
+              <div class="edu-body">
+                <h3>Primary</h3>
+                <p class="edu-school">Burol Elementary School</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS: exhibition plates, rendered from the PROJECTS array in the script below -->
+  <section class="section projects" id="projects" aria-labelledby="proj-title">
+    <div class="wrap">
+      <header class="grid sec-head reveal">
+        <p class="sec-index mono"><span class="n">05</span><span>Projects</span></p>
+        <h2 class="sec-title" id="proj-title">Featured <em>projects</em></h2>
+        <p class="sec-dek">Every plate pairs a finished piece with the sketch it started from.<span id="sample-note" hidden> The plates below are <strong>sample records</strong> for testing the layout and filters, not real work.</span></p>
+      </header>
+
+      <!-- The framed exhibition wall, like the box in the original wireframe -->
+      <div class="proj-frame">
+        <form class="filters reveal" data-reveal="fade" id="filters" role="search" aria-label="Search and filter projects">
+          <div class="f-search">
+            <label for="q" class="mono">Search</label>
+            <div class="f-search-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+              <input id="q" type="search" placeholder="Title, software, category or year" autocomplete="off">
+            </div>
+          </div>
+          <div class="f-sel"><label for="f-cat" class="mono">Category</label><select id="f-cat"><option value="">All categories</option></select></div>
+          <div class="f-foot">
+            <p class="f-count" id="f-count" role="status" aria-live="polite"></p>
+            <button class="f-reset" id="f-reset" type="reset">Clear search and category</button>
+          </div>
+        </form>
+
+        <ol class="plates" id="plates" aria-label="Projects" data-stagger=":scope > .plate" data-each></ol>
+        <div class="empty" id="empty" hidden>
+          <p class="empty-title">Nothing on the wall for that.</p>
+          <p id="empty-text"></p>
+          <button class="btn btn-outline" type="button" id="empty-reset">Show all projects</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED: the before-and-after centerpiece, set on a dark lightbox band -->
+  <section class="featured" id="featured" aria-labelledby="feat-title">
+    <div class="wrap">
+      <header class="feat-head grid reveal">
+        <p class="sec-index mono"><span class="n">06</span><span>Before &amp; After</span></p>
+        <div class="feat-titles">
+          <p class="feat-tag mono" id="feat-plate"></p>
+          <h2 class="feat-title" id="feat-title"></h2>
+        </div>
+        <div class="view-toggle" role="group" aria-label="Comparison view">
+          <button type="button" class="vt-btn" data-view="slider" aria-pressed="true">Slider</button>
+          <button type="button" class="vt-btn" data-view="split" aria-pressed="false">Side by side</button>
+        </div>
+      </header>
+
+      <div class="compare" id="compare" data-view="slider" style="--pos: 50%">
+        <div class="cmp-stage">
+          <figure class="cmp-layer cmp-after" aria-label="Final, after">
+            <div class="cmp-media" data-slot="after"></div>
+            <figcaption class="cmp-label cmp-label-r mono">Final &middot; After</figcaption>
+          </figure>
+          <figure class="cmp-layer cmp-before" aria-label="Sketch, before">
+            <div class="cmp-media" data-slot="before"></div>
+            <figcaption class="cmp-label mono">Sketch &middot; Before</figcaption>
+          </figure>
+          <div class="cmp-handle" aria-hidden="true"><span class="cmp-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></div>
+          <input class="cmp-range" id="cmp-range" type="range" min="0" max="100" step="1" value="50"
+            aria-label="Compare sketch and final artwork. Lower values show more of the final, higher values show more of the sketch.">
+        </div>
+        <div class="cmp-split" aria-hidden="true">
+          <figure><div class="cmp-media" data-slot="before"></div><figcaption class="mono">01 &middot; Sketch &middot; Before</figcaption></figure>
+          <figure><div class="cmp-media" data-slot="after"></div><figcaption class="mono">02 &middot; Final &middot; After</figcaption></figure>
+        </div>
+      </div>
+      <p class="cmp-hint mono" id="cmp-hint">Drag the handle, tap anywhere on the image, or use the arrow keys.</p>
+
+      <div class="feat-story reveal">
+        <p id="feat-desc"></p>
+        <a class="btn btn-primary" id="feat-open" href="#projects">View the full project <span class="arr" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section class="section" id="cv" aria-labelledby="cv-title">
+    <div class="wrap grid cv-grid">
+      <div class="cv-sheet-wrap reveal" data-reveal="tilt">
+        <!-- The first page of your CV, made from files/Ythan_Almarines_Resume.pdf -->
+        <div class="cv-sheet has-img"><img src="images/cv-preview.jpg" alt="First page of Ythan Almarines's CV" width="636" height="900" loading="lazy" decoding="async"></div>
+      </div>
+
+      <div class="cv-body" data-stagger=":scope > *">
+        <p class="sec-index mono"><span class="n">07</span><span>CV</span></p>
+        <h2 class="sec-title" id="cv-title">The whole story on one page</h2>
+        <p class="cv-desc">My CV collects my education, experience, skills and selected projects in one printable PDF. Download a copy or open it in a new tab to read online.</p>
+        <dl class="cv-file mono">
+          <div><dt>File</dt><dd>Ythan_Almarines_Resume.pdf</dd></div>
+          <div><dt>Format</dt><dd>PDF, 1 page</dd></div>
+          <div><dt>Updated</dt><dd>November 2026</dd></div> <!-- Change this when you replace the PDF -->
+        </dl>
+        <div class="cv-actions">
+          <a class="btn btn-primary" href="files/Ythan_Almarines_Resume.pdf" download>Download CV <span class="mono">PDF</span></a>
+          <a class="btn btn-outline" href="files/Ythan_Almarines_Resume.pdf" target="_blank" rel="noopener">View CV Online <span aria-hidden="true">&nearr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <header class="grid sec-head reveal">
+        <p class="sec-index mono"><span class="n">08</span><span>Contact</span></p>
+        <h2 class="sec-title" id="contact-title">Start with a sketch. Send me a message.</h2>
+        <p class="sec-dek">For commissions, collaborations, internships or feedback on my work.</p>
+      </header>
+      <div class="grid">
+        <div class="contact-info" data-stagger=":scope > *">
+          <dl class="channels rule-draw">
+            <div><dt class="mono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg>Email</dt><dd><a href="mailto:almarinesythan2@gmail.com">almarinesythan2@gmail.com</a></dd></div>
+            <div><dt class="mono"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 12l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>Phone</dt><dd><a href="tel:+639918964264">0991 896 4264</a></dd></div> <!-- Delete this row to keep your number off the public site -->
+            <div><dt class="mono"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Location</dt><dd>Calamba City, Laguna, Philippines</dd></div> <!-- City only: your street address stays off the site -->
+          </dl>
+          <h3 class="mono channels-head">Elsewhere</h3>
+          <dl class="channels social">
+            <div><dt class="mono">GitHub</dt><dd><a href="https://github.com/tantanannan" target="_blank" rel="noopener">tantanannan</a></dd></div>
+            <div><dt class="mono">Instagram</dt><dd><a href="https://www.instagram.com/tanchiato/" target="_blank" rel="noopener">@tanchiato</a></dd></div>
+            <div><dt class="mono">Facebook</dt><dd><a href="https://www.facebook.com/share/1FRAPZCMxt/" target="_blank" rel="noopener">Ythan Almarines</a></dd></div>
+          </dl>
+        </div>
+
+        <!-- Sends through Formspree; the form address and all sending code are in js/home.js -->
+        <form class="contact-form" data-stagger=":scope > :not(.hp)" id="contact-form" action="https://formspree.io/f/xgaananp" method="POST" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+              <p class="err" id="f-name-err" hidden></p>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err">
+              <p class="err" id="f-email-err" hidden></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-subject">Subject</label>
+            <input id="f-subject" name="subject" type="text" required aria-describedby="f-subject-err">
+            <p class="err" id="f-subject-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-message">Message <span class="hint mono">At least 10 characters</span></label>
+            <textarea id="f-message" name="message" rows="6" required aria-describedby="f-message-err"></textarea>
+            <p class="err" id="f-message-err" hidden></p>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Leave this field empty</label>
+            <input id="f-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-foot">
+            <button class="btn btn-primary" type="submit">Send Message <span class="arr" aria-hidden="true">&rarr;</span></button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Proof viewer: "View proof" links in Experience open their image here (without JavaScript they open the image itself) -->
+<dialog class="proof" id="proof" aria-labelledby="proof-cap">
+  <div class="proof-bar">
+    <p class="mono" id="proof-cap"></p>
+    <button class="icon-btn" type="button" id="proof-close" aria-label="Close proof">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <div class="proof-media"><img id="proof-img" src="data:," alt=""></div>
+</dialog>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <a class="logo foot-logo" href="#home" aria-label="Logo, back to the top of the homepage"><img src="images/logo/logo.jpg" alt="" width="192" height="192" decoding="async"></a>
+      <p class="foot-name">Ythan Almarines</p>
+      <p class="foot-role">Personal portfolio</p>
+    </div>
+    <div class="foot-cta">
+      <p class="foot-ask">Have a brief, a question or a project in mind?</p>
+      <a class="foot-back" href="#contact">Send me a message <span class="arr" aria-hidden="true">&rarr;</span></a>
+      <p class="mono foot-mail"><a href="mailto:almarinesythan2@gmail.com">almarinesythan2@gmail.com</a></p>
+    </div>
+    <div class="foot-cols">
+      <nav class="foot-col" aria-label="Footer">
+        <h2 class="mono">Index</h2>
+        <ol class="foot-index">
+          <li><a href="#about"><span class="mono">01</span>About</a></li>
+          <li><a href="#skills"><span class="mono">02</span>Skills</a></li>
+          <li><a href="#experience"><span class="mono">03</span>Experience</a></li>
+          <li><a href="#education"><span class="mono">04</span>Education</a></li>
+          <li><a href="#projects"><span class="mono">05</span>Projects</a></li>
+          <li><a href="#cv"><span class="mono">07</span>CV</a></li>
+          <li><a href="#contact"><span class="mono">08</span>Contact</a></li>
+        </ol>
+      </nav>
+      <div class="foot-col">
+        <h2 class="mono">Elsewhere</h2>
+        <ul class="foot-social">
+          <li><a href="https://github.com/tantanannan" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.instagram.com/tanchiato/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/1FRAPZCMxt/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-concept">
+        <h2 class="mono">The concept</h2>
+        <p class="foot-mark">From <em>Sketch</em> to Screen</p>
+        <p>Every project here starts on paper and finishes on screen.</p>
+      </div>
+    </div>
+    <div class="foot-row mono">
+      <span>&copy; 2026 Ythan P. Almarines. All rights reserved.</span>
+      <a href="#home">Back to top <span aria-hidden="true">&uarr;</span></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Order matters: project data first, then shared code, then this page's code -->
+<script src="js/projects.js"></script>
+<script src="js/site.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

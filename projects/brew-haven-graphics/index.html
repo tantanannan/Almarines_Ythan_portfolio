@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Project | Ythan Almarines</title>
+  <meta name="description" content="A project from my graphic design portfolio: from the original sketch to the finished artwork.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/project.css">
+  <!-- Before first paint: apply a saved theme, and allow motion unless the visitor asked for less.
+       If this does not run, the page simply shows without animation. -->
+  <script>(function (d) { d.classList.add('js'); try { var t = localStorage.getItem('sts-theme'); if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t); } catch (e) {} if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('motion'); })(document.documentElement);</script>
+</head>
+<!--
+  PROJECT PAGE TEMPLATE. Every project folder holds an identical copy of this file.
+  The page reads its folder name (for example "my-poster") and shows that project from js/projects.js.
+  You never need to edit this file.
+-->
+<body class="project-page" data-root="../../">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <span class="read-progress" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="hdr-left">
+      <a class="logo" href="../../index.html" aria-label="Logo, go to the homepage">
+        <img src="../../images/logo/logo.jpg" alt="" width="192" height="192" decoding="async">
+      </a>
+      <a class="back-link" href="../../index.html#projects"><span class="arr" aria-hidden="true">&larr;</span><span class="back-long">Back to projects</span><span class="back-short">Projects</span></a>
+    </div>
+    <nav class="nav-desktop" aria-label="On this page">
+      <ul>
+        <li data-sec="sketch"><a href="#sketch"><sup>01</sup>Sketch</a></li>
+        <li data-sec="workspace"><a href="#workspace"><sup>02</sup>Workspace</a></li>
+        <li data-sec="final"><a href="#final"><sup>03</sup>Final output</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn theme-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menu-open" type="button" aria-label="Open page menu" aria-expanded="false" aria-controls="menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 8h18M3 16h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Page menu" hidden>
+  <div class="wrap">
+    <div class="menu-top">
+      <a class="logo" href="../../index.html" aria-label="Logo, go to the homepage"><img src="../../images/logo/logo.jpg" alt="" width="192" height="192" decoding="async"></a>
+      <button class="icon-btn" id="menu-close" type="button" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile">
+      <ol>
+        <li data-sec="sketch"><a href="#sketch"><span class="num mono">01</span><span class="label">Original sketch</span></a></li>
+        <li data-sec="workspace"><a href="#workspace"><span class="num mono">02</span><span class="label">Workspace</span></a></li>
+        <li data-sec="final"><a href="#final"><span class="num mono">03</span><span class="label">Final output</span></a></li>
+        <li><a href="../../index.html#projects"><span class="num mono">&larr;</span><span class="label">All projects</span></a></li>
+      </ol>
+    </nav>
+    <p class="menu-foot mono">Project &middot; From Sketch to Screen</p>
+  </div>
+</div>
+
+<main id="main">
+  <!-- TITLE: title, short description, basic facts. The images below tell the story. -->
+  <section class="cs-hero" aria-labelledby="cs-title">
+    <div class="wrap grid">
+      <p class="cs-kicker mono"><span class="pl" id="cs-plate"></span><span id="cs-sample"></span></p>
+      <h1 class="cs-title" id="cs-title"></h1>
+      <div class="cs-side">
+        <p class="cs-intro" id="cs-intro"></p>
+        <dl class="cs-meta mono" id="cs-meta"></dl>
+        <dl class="cs-notes" id="cs-notes"></dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- The same three steps on every project page, always in this order:
+       01 Original sketch -> 02 Inside my workspace -> 03 Final output -->
+
+  <!-- 01 ORIGINAL SKETCH -->
+  <section class="step" id="sketch" aria-labelledby="sk-h">
+    <header class="wrap step-head" data-stagger=":scope > *">
+      <span class="step-no" aria-hidden="true"></span>
+      <div class="step-titles">
+        <p class="step-kicker mono">Before</p>
+        <h2 class="step-title" id="sk-h">Original sketch</h2>
+      </div>
+      <p class="step-cap mono" id="sk-cap">Where the idea started</p>
+    </header>
+    <div class="mat">
+      <button class="art art-shadow art-btn" id="sk-art" type="button" aria-haspopup="dialog"></button>
+    </div>
+  </section>
+
+  <!-- 02 INSIDE MY WORKSPACE -->
+  <section class="step" id="workspace" aria-labelledby="ws-h">
+    <header class="wrap step-head" data-stagger=":scope > *">
+      <span class="step-no" aria-hidden="true"></span>
+      <div class="step-titles">
+        <p class="step-kicker mono">Behind the scenes</p>
+        <h2 class="step-title" id="ws-h">Inside my workspace</h2>
+      </div>
+      <p class="step-cap mono" id="ws-cap"></p>
+    </header>
+    <div class="mat">
+      <button class="art art-shadow art-btn" id="ws-art" type="button" aria-haspopup="dialog"></button>
+    </div>
+  </section>
+
+  <!-- 03 FINAL OUTPUT, with an optional before & after comparison -->
+  <section class="step step-final" id="final" aria-labelledby="fi-h" data-mode="final">
+    <header class="wrap step-head" data-stagger=":scope > *">
+      <span class="step-no" aria-hidden="true"></span>
+      <div class="step-titles">
+        <p class="step-kicker mono">After</p>
+        <h2 class="step-title" id="fi-h">Final output</h2>
+      </div>
+      <div class="view-toggle" id="fi-views" role="group" aria-label="How to show the final output">
+        <button type="button" class="vt-btn" data-view="final" aria-pressed="true">Final</button>
+        <button type="button" class="vt-btn" data-view="slider" aria-pressed="false">Before / After</button>
+        <button type="button" class="vt-btn" data-view="split" aria-pressed="false">Side by side</button>
+      </div>
+    </header>
+    <div class="mat">
+      <button class="art art-shadow art-btn" id="fi-art" type="button" aria-haspopup="dialog"></button>
+      <div class="compare" id="compare" data-view="slider" style="--pos: 50%">
+        <div class="cmp-stage">
+          <figure class="cmp-layer cmp-after" aria-label="Final, after">
+            <div class="cmp-media" data-slot="after"></div>
+            <figcaption class="cmp-label cmp-label-r mono">Final &middot; After</figcaption>
+          </figure>
+          <figure class="cmp-layer cmp-before" aria-label="Sketch, before">
+            <div class="cmp-media" data-slot="before"></div>
+            <figcaption class="cmp-label mono">Sketch &middot; Before</figcaption>
+          </figure>
+          <div class="cmp-handle" aria-hidden="true"><span class="cmp-knob"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></div>
+          <input class="cmp-range" id="cmp-range" type="range" min="0" max="100" step="1" value="50"
+            aria-label="Compare sketch and final artwork. Higher values show more of the sketch.">
+        </div>
+        <div class="cmp-split" aria-hidden="true">
+          <figure><div class="cmp-media" data-slot="before"></div><figcaption class="mono">01 &middot; Sketch &middot; Before</figcaption></figure>
+          <figure><div class="cmp-media" data-slot="after"></div><figcaption class="mono">03 &middot; Final &middot; After</figcaption></figure>
+        </div>
+        <p class="cmp-hint mono">Drag the handle, tap anywhere on the image, or use the arrow keys.</p>
+      </div>
+      <p class="step-note mono" id="fi-note" hidden></p>
+    </div>
+  </section>
+
+  <!-- Enlarged image -->
+  <dialog class="zoom" id="zoom" aria-labelledby="zoom-cap">
+    <div class="zoom-bar">
+      <p class="mono" id="zoom-cap"></p>
+      <button class="icon-btn" type="button" id="zoom-close" aria-label="Close enlarged image">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <div class="zoom-media" id="zoom-media"></div>
+  </dialog>
+
+  <!-- PREVIOUS / NEXT -->
+  <nav class="cs-sec pn-sec" aria-label="More projects">
+    <div class="wrap">
+      <div class="pn" id="pn"></div>
+    </div>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-id">
+      <a class="logo foot-logo" href="../../index.html" aria-label="Logo, go to the homepage"><img src="../../images/logo/logo.jpg" alt="" width="192" height="192" decoding="async"></a>
+      <p class="foot-name">Ythan Almarines</p>
+      <p class="foot-role">Personal portfolio</p>
+    </div>
+    <div class="foot-cta">
+      <p class="foot-ask">Have a brief, a question or a project in mind?</p>
+      <a class="foot-back" href="../../index.html#contact">Send me a message <span class="arr" aria-hidden="true">&rarr;</span></a>
+      <p class="mono foot-mail"><a href="mailto:almarinesythan2@gmail.com">almarinesythan2@gmail.com</a></p>
+    </div>
+    <div class="foot-cols">
+      <nav class="foot-col" aria-label="Footer">
+        <h2 class="mono">Index</h2>
+        <ol class="foot-index">
+          <li><a href="../../index.html#about"><span class="mono">01</span>About</a></li>
+          <li><a href="../../index.html#skills"><span class="mono">02</span>Skills</a></li>
+          <li><a href="../../index.html#experience"><span class="mono">03</span>Experience</a></li>
+          <li><a href="../../index.html#education"><span class="mono">04</span>Education</a></li>
+          <li><a href="../../index.html#projects"><span class="mono">05</span>Projects</a></li>
+          <li><a href="../../index.html#cv"><span class="mono">07</span>CV</a></li>
+          <li><a href="../../index.html#contact"><span class="mono">08</span>Contact</a></li>
+        </ol>
+      </nav>
+      <div class="foot-col">
+        <h2 class="mono">Elsewhere</h2>
+        <ul class="foot-social">
+          <li><a href="https://github.com/tantanannan" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.instagram.com/tanchiato/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/1FRAPZCMxt/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-concept">
+        <h2 class="mono">The concept</h2>
+        <p class="foot-mark">From <em>Sketch</em> to Screen</p>
+        <p>Every project here starts on paper and finishes on screen.</p>
+      </div>
+    </div>
+    <div class="foot-row mono">
+      <span>&copy; 2026 Ythan P. Almarines. All rights reserved.</span>
+      <a href="#main">Back to top <span aria-hidden="true">&uarr;</span></a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/projects.js"></script>
+<script src="../../js/site.js"></script>
+<script src="../../js/project.js"></script>
+</body>
+</html>
