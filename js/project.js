@@ -48,7 +48,8 @@
   var intro = document.getElementById('cs-intro');
   intro.textContent = p.description || '';
   intro.hidden = !p.description;
-  document.getElementById('cs-meta').innerHTML = [['Year', p.year], ['Category', p.category], ['Software', soft]]
+  var hasSoftware = !!(p.software || []).length;
+  document.getElementById('cs-meta').innerHTML = [['Year', p.year], ['Category', p.category], hasSoftware || !p.medium ? ['Software', soft] : ['Medium', p.medium]]
     .map(function (r) { return '<div><dt>' + r[0] + '</dt><dd>' + esc(r[1]) + '</dd></div>'; }).join('');
   var notes = [['Design goal', p.goal], ['Final result', p.result]].filter(function (r) { return r[1]; });
   document.getElementById('cs-notes').innerHTML = notes.map(function (r) { return '<div><dt>' + r[0] + '</dt><dd>' + esc(r[1]) + '</dd></div>'; }).join('');
@@ -74,6 +75,12 @@
     }
   }
   var tag = p.sample ? 'Sample · ' : '';
+  /* A drawing on its own (no workspace, no final output) is presented as the drawing, not as a "before" */
+  if (hasSketch && !p.images.final && !p.images.workspace) {
+    document.querySelector('#sketch .step-kicker').textContent = 'Hand-drawn';
+    document.getElementById('sk-h').textContent = 'Original drawing';
+    document.querySelectorAll('.menu [data-sec="sketch"] .label').forEach(function (l) { l.textContent = 'Original drawing'; });
+  }
   fillStep('sketch', 'sk-art', p.images.sketch, p.title + ', original sketch', 'Original sketch not added yet', 'Original sketch — ' + p.title, ratio);
   var wsCap = 'Digital workspace — ' + soft;
   document.getElementById('ws-cap').textContent = wsCap;

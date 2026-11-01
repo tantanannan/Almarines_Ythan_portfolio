@@ -37,6 +37,10 @@
    Optional extras (only if needed):
      aligned: false   your sketch and final are framed differently, so show them side by side, not with the slider
      type: 'Print'    override the Type worked out from the category
+     medium: 'Hand-drawn'  shown instead of Software when a piece was made without software
+
+   A drawing on its own: give only images.sketch and leave final and workspace ''. The gallery plate then
+   shows the drawing, and its page shows just the one step.
 */
 
 var PROJECTS = [
@@ -45,6 +49,17 @@ var PROJECTS = [
      your Drive folder names, and the app shown in each workspace screenshot. Check them and edit freely.
      category is the course term (Prelim, Midterm, Finals); type is the kind of design shown on each card.
      Keep the list in term order: the Category filter lists terms in the order they first appear here. */
+  {
+    slug: 'pina-prosperity',
+    title: 'Piña Prosperity', year: 2026, category: 'Prelim', type: 'Drawing', software: [], medium: 'Hand-drawn',
+    description: 'Activity 1: a hand-drawn, coloured pineapple titled “Piña Prosperity”, with small bows on its leaves.',
+    goal: '', result: '', // optional: one sentence each for the design goal and the result
+    images: {
+      final: '',      // a drawing on its own: no workspace or final output
+      sketch: 'images/projects/pina-prosperity/sketch.jpg', // Activity 1, Aug 4 2026 (signature covered)
+      workspace: ''
+    }
+  },
   {
     slug: 'moneyfesting-logo',
     title: 'Moneyfesting logo set', year: 2026, category: 'Prelim', type: 'Brand design', software: ['Adobe Photoshop'],

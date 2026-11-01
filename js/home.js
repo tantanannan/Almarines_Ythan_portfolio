@@ -35,7 +35,7 @@
   function matches(p, f) {
     if (f.cat && p.category !== f.cat) return false;
     if (f.q) { // search still looks at software and year, so "Photoshop" or "2025" find projects
-      var hay = [p.title, p.category, P.typeOf(p), p.year, p.description].concat(p.software || []).join(' ').toLowerCase();
+      var hay = [p.title, p.category, P.typeOf(p), p.year, p.description, p.medium].concat(p.software || []).join(' ').toLowerCase();
       if (hay.indexOf(f.q) < 0) return false;
     }
     return true;
@@ -44,10 +44,16 @@
     var url = esc(P.pageUrl(p));
     var tag = p.sample ? 'Sample · ' : '';
     var hasSketch = !!p.images.sketch;
+    var drawingOnly = hasSketch && !p.images.final; // a drawing on its own: the plate shows the drawing, with no hover swap
+    var soft = (p.software || []).length
+      ? '<dt>Software</dt><dd>' + p.software.map(function (t) { return hl(t, q); }).join(', ') + '</dd>'
+      : (p.medium ? '<dt>Medium</dt><dd>' + hl(p.medium, q) + '</dd>' : '');
     return '<li class="plate" style="--n: ' + n + '"><article aria-labelledby="pt-' + esc(p.slug) + '">' +
       '<div class="plate-media">' +
-        '<div class="pm-layer pm-final">' + P.media(p.images.final, p.title + ', final artwork', tag + 'Final artwork', true) + '</div>' +
-        (hasSketch ? '<div class="pm-layer pm-sketch">' + P.media(p.images.sketch, p.title + ', original sketch', tag + 'Original sketch', true) + '</div>' +
+        (drawingOnly
+          ? '<div class="pm-layer pm-final">' + P.media(p.images.sketch, p.title + ', original drawing', tag + 'Original drawing', true) + '</div>'
+          : '<div class="pm-layer pm-final">' + P.media(p.images.final, p.title + ', final artwork', tag + 'Final artwork', true) + '</div>') +
+        (hasSketch && !drawingOnly ? '<div class="pm-layer pm-sketch">' + P.media(p.images.sketch, p.title + ', original sketch', tag + 'Original sketch', true) + '</div>' +
           '<span class="pm-label mono" aria-hidden="true"><span class="pm-l-final">Final</span><span class="pm-l-sketch">Sketch</span></span>' : '') +
         '<a href="' + url + '" tabindex="-1" aria-hidden="true"></a>' +
       '</div>' +
@@ -57,7 +63,7 @@
         '<h3 class="plate-title" id="pt-' + esc(p.slug) + '"><a href="' + url + '">' + hl(p.title, q) + '</a></h3>' +
         (p.description ? '<p class="plate-desc">' + esc(p.description) + '</p>' : '') +
         '<div class="plate-foot">' +
-          '<dl class="plate-soft"><dt>Software</dt><dd>' + (p.software || []).map(function (t) { return hl(t, q); }).join(', ') + '</dd></dl>' +
+          '<dl class="plate-soft">' + soft + '</dl>' +
           '<a class="plate-btn" href="' + url + '" aria-label="View project: ' + esc(p.title) + '">View project <span class="arr" aria-hidden="true">&rarr;</span></a>' +
         '</div>' +
       '</div>' +
