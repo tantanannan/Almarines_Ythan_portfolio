@@ -144,6 +144,23 @@
   .pn a.prev:hover .pn-title { transform: translateX(-6px); }
 }
 
+/* ===================== BODY ATMOSPHERE AND TYPE (see style.css) ===================== */
+/* Title area lit like the homepage sections; artwork mats neutral; the page warms to Green Tea
+   under previous / next and meets the footer's lime edge. */
+.cs-hero {
+  --atmos:
+    radial-gradient(40% 64% at 90% 54%, var(--glow-tea), transparent 70%),
+    radial-gradient(30% 40% at 0% 88%, var(--glow-lime), transparent 70%);
+}
+.pn-sec {
+  --atmos: linear-gradient(180deg, transparent 0, var(--mist) 56%, var(--tint) 100%);
+  --atmos-mask: linear-gradient(180deg, transparent 0, #000 30%, #000 100%);
+}
+.mat { background: var(--art-mat); }
+.cs-intro { color: var(--copy); }
+.cs-meta dt, .cs-notes dt, .step-kicker, .step-cap { letter-spacing: .1em; }
+.cs-meta dd { font-variant-numeric: tabular-nums; }
+
 /* Enlarged image opens with a short fade and settle */
 @keyframes zoom-in { from { opacity: 0; transform: scale(.98); } }
 .motion .zoom[open] { animation: zoom-in 220ms var(--ease); }
