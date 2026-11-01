@@ -182,12 +182,14 @@ If sending fails, the visitor's text stays in the form and the error says why.
 
 ## 10. Your live website and how to update it
 
-The site is published with GitHub Pages from the `main` branch of the `portfolio` repository:
+The site is published with GitHub Pages from the `main` branch of the `Almarines_Ythan_portfolio` repository
+(renamed from `portfolio`; the old `/portfolio/` address no longer serves the site):
 
-- Website: `https://tantanannan.github.io/portfolio/`
-- Repository: `https://github.com/tantanannan/portfolio`
+- Website: `https://tantanannan.github.io/Almarines_Ythan_portfolio/`
+- Repository: `https://github.com/tantanannan/Almarines_Ythan_portfolio`
 
-All links are relative, so the site works under `/portfolio/`. `.nojekyll` tells GitHub to serve
+All links are relative, so the site works under `/Almarines_Ythan_portfolio/` (or any other name).
+The browser tab icon is in `images/favicon/`, made from `images/logo/ICON LOGO.jpg`. `.nojekyll` tells GitHub to serve
 the files exactly as they are. `.gitignore` lists files that stay on this computer only (original
 source images, the "put your file here" notes and `projects/_template`).
 

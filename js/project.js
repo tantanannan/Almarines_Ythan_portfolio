@@ -23,7 +23,7 @@
 
   if (!p) {
     /* The folder name does not match any slug in projects.js */
-    document.title = 'Project not found | Ythan Almarines';
+    document.title = 'Project not found | Almarines_Ythan_portfolio';
     document.getElementById('cs-plate').textContent = 'Not found';
     document.getElementById('cs-title').textContent = 'This project is not in the list';
     document.getElementById('cs-meta').innerHTML = '<div><dt>Check</dt><dd>The folder name must match a slug in js/projects.js</dd></div>';
@@ -37,7 +37,7 @@
   var soft = (p.software || []).join(' & ') || 'editing software';
   var ratio = p.ratio || '16 / 9';
   var hasSketch = !!p.images.sketch;
-  document.title = p.title + ' | Ythan Almarines';
+  document.title = p.title + ' | Almarines_Ythan_portfolio';
   var metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc && p.description) metaDesc.setAttribute('content', p.description);
 
