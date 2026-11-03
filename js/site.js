@@ -93,11 +93,11 @@
   });
   window.addEventListener('resize', function () { if (isOpen() && window.innerWidth >= 1100) closeMenu(false); });
 
-  /* Analytics: GoatCounter's free hosted service (no cookies, no personal data).
-     count.js reports each page load once; GoatCounter records it as a view unless the same visitor
-     opened that page in the last 8 hours. It skips localhost, file:// and bots on its own.
-     The detailed statistics stay private at the dashboard address below (GoatCounter login).
-     The footer shows only the site-wide total, from GoatCounter's public TOTAL counter. */
+  /* Analytics: GoatCounter's free hosted service.
+     count.js still records the homepage and project pages for the private dashboard.
+     Repeat visits to a previously viewed page are subject to GoatCounter's session rules.
+     The public counter shows ONLY recorded homepage visits, not total page views
+     across the portfolio and not a count of unique people or devices. */
   var GC = 'https://almarinesythan.goatcounter.com';
   function track() {
     if (document.querySelector('script[data-goatcounter]')) return; // never load it twice
@@ -111,17 +111,17 @@
   }
   /* After the page's own scripts, so a project page is recorded with its project title */
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', track); else track();
-  /* The site-wide total, as GoatCounter formats it ("1,234"). One request per page, shared by the
-     footer and the Views page (Site.totalViews); a failed request may be tried again.
-     Asked for as a date range: GoatCounter keeps each counter answer in its own cache, and an answer
-     older than 4 hours can stay stuck for up to 8 more (README, Analytics). A range that moves with the
-     date gives a fresh cache entry every day. start is the day tracking began, so the total is still
-     every view since then; end is two days ahead in UTC (GoatCounter counts whole UTC hours up to the
-     start of the end date), so today is always included, even on a device whose clock is a day behind. */
+  /* Public homepage-only counter. Site.totalViews keeps its existing name so analytics.js
+     continues working, but the value is now the recorded visits to HOME_PATH only.
+     GoatCounter's public counter takes the exact encoded page path (not TOTAL).
+     A moving end date retains the existing date-filtered workaround for stale cache entries.
+     The end date is exclusive; two days ahead in UTC helps include today's visits. */
   var TRACKING_START = '2026-11-03';
+  var HOME_PATH = '/Almarines_Ythan_portfolio/';
   function totalURL() {
     var end = new Date(Date.now() + 2 * 864e5).toISOString().slice(0, 10);
-    return GC + '/counter/TOTAL.json?start=' + TRACKING_START + '&end=' + end;
+    return GC + '/counter/' + encodeURIComponent(HOME_PATH) +
+      '.json?start=' + TRACKING_START + '&end=' + end;
   }
   var totalReq = null;
   function totalViews() {
@@ -135,17 +135,19 @@
       .then(function (d) {
         clearTimeout(timer);
         var n = d && typeof d.count === 'string' ? d.count.trim() : '';
-        if (!/^\d[\d\s,.  ']*$/.test(n)) throw new Error('count');
+        if (!/^\d[\d\s,.  ']*$/.test(n)) throw new Error('count');
         return n;
       })
       .catch(function (err) { clearTimeout(timer); totalReq = null; throw err; });
     return totalReq;
   }
-  /* "Recorded Portfolio Views" in the footer: fetched when the footer comes near the screen.
+  /* "Homepage Visits" in the footer: fetched when the footer comes near the screen.
      Hidden without JavaScript; says "Loading" while it waits and "Unavailable" if the service fails. */
   var views = document.querySelector('[data-views]');
   if (views) {
     var viewsN = views.querySelector('[data-views-n]');
+    var viewsLabel = views.querySelector('span:not([data-views-n])');
+    if (viewsLabel) viewsLabel.textContent = 'Homepage Visits';
     views.hidden = false;
     var showViews = function () {
       totalViews().then(function (n) {
