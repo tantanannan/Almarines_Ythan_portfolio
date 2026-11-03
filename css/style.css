@@ -142,7 +142,7 @@ h1 em, h2 em, h3 em { font-style: normal; font-weight: 300; color: var(--marker-
 }
 .site-header .nav-desktop a::after { background: var(--lime); height: 2px; }
 .site-header .nav-desktop a sup { color: var(--ink); opacity: .72; }
-.site-header .nav-desktop a[aria-current="true"] sup { opacity: 1; }
+.site-header .nav-desktop a[aria-current="true"] sup, .site-header .nav-desktop a[aria-current="page"] sup { opacity: 1; }
 .site-header .logo:hover { box-shadow: 0 0 0 4px var(--rule); }
 .site-header :focus-visible, .menu-top :focus-visible { outline-color: var(--ink); outline-offset: 2px; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--header-h); }
@@ -178,8 +178,8 @@ h1 em, h2 em, h3 em { font-style: normal; font-weight: 300; color: var(--marker-
   transform: scaleX(0); transform-origin: right; transition: transform 280ms var(--ease);
 }
 /* the underline enters from the left and leaves to the right */
-.nav-desktop a:hover::after, .nav-desktop a[aria-current="true"]::after { transform: scaleX(1); transform-origin: left; }
-.nav-desktop a[aria-current="true"] sup { color: var(--marker-ink); }
+.nav-desktop a:hover::after, .nav-desktop a[aria-current="true"]::after, .nav-desktop a[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
+.nav-desktop a[aria-current="true"] sup, .nav-desktop a[aria-current="page"] sup { color: var(--marker-ink); }
 .nav-desktop a.later { color: var(--pencil); }
 .header-tools { display: flex; align-items: center; gap: 8px; }
 .icon-btn {
@@ -913,7 +913,8 @@ body.menu-open { overflow: hidden; }
 .foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; border-top: 1px solid var(--on-marker); padding-top: 16px; font-size: .6875rem; }
 /* Public counter: GoatCounter's site-wide total, the only statistic shown publicly (filled in by site.js).
    The footer is the same pine bar in both themes, so the number is Lime Glow on pine (8.4:1) in both. */
-.foot-views { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; letter-spacing: .1em; }
+.foot-views { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; letter-spacing: .1em; }
+.foot-views .eye { width: 16px; height: 16px; flex: 0 0 auto; color: var(--marker-ink); margin-right: -2px; }
 .foot-views-n { color: var(--marker-ink); font-size: .8125rem; font-weight: 500; letter-spacing: .04em; font-variant-numeric: tabular-nums; }
 .foot-views:not([data-state="ready"]) .foot-views-n { color: inherit; font-size: inherit; font-weight: 400; opacity: .8; }
 .foot-privacy { flex-basis: 100%; font-family: var(--f-body); font-size: .75rem; letter-spacing: 0; text-transform: none; opacity: .8; }

@@ -1,0 +1,65 @@
+/* ============================================================
+   analytics.css — the Analytics page only (analytics.html).
+   Built from the shared tokens and section frame in style.css; nothing here changes other pages.
+   ============================================================ */
+
+/* Soft palette lighting, like the homepage sections (BODY ATMOSPHERE in style.css) */
+.an-public {
+  --atmos:
+    radial-gradient(42% 56% at 88% 46%, var(--glow-tea), transparent 70%),
+    radial-gradient(30% 38% at 4% 82%, var(--glow-lime), transparent 70%);
+  --atmos-mask: linear-gradient(180deg, transparent 0, #000 14%, #000 82%, transparent 100%);
+}
+.an-owner {
+  --atmos:
+    radial-gradient(46% 50% at 2% 30%, var(--glow-tea), transparent 70%),
+    radial-gradient(34% 40% at 98% 86%, var(--glow-pine), transparent 70%);
+}
+
+/* PUBLIC VIEW: one large number, then what it means */
+.an-grid { row-gap: clamp(48px, 6vw, 72px); }
+.an-total { grid-column: 1 / -1; display: grid; gap: 14px; justify-items: start; border-top: 1.5px solid var(--marker); padding-top: 24px; }
+.an-total-label { display: inline-flex; align-items: center; gap: 10px; color: var(--marker-ink); font-weight: 500; letter-spacing: .14em; }
+.an-total-label .eye { width: 20px; height: 20px; flex: 0 0 auto; }
+.an-total-n {
+  font-family: var(--f-display); font-weight: 500; color: var(--marker-ink);
+  font-size: clamp(3.75rem, 13vw, 9.5rem); line-height: .9; letter-spacing: -.05em;
+  font-variant-numeric: tabular-nums; overflow-wrap: anywhere;
+}
+.an-total[data-state="loading"] .an-total-n { color: var(--rule-strong); } /* a quiet placeholder dash, never a number */
+.an-total[data-state="error"] .an-total-n { display: none; }
+.an-total-status { color: var(--copy); max-width: 48ch; }
+.an-retry { margin-top: 4px; }
+
+.an-facts { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 28px 32px; }
+.an-facts > div { border-top: 1px solid var(--rule); padding-top: 14px; display: grid; gap: 6px; align-content: start; }
+.an-facts dt { font-size: .6875rem; color: var(--pencil); letter-spacing: .12em; }
+.an-facts dd { color: var(--copy); line-height: 1.6; }
+.an-facts a { color: var(--marker-ink); text-decoration: underline; text-underline-offset: 3px; }
+
+/* OWNER VIEW: the buttons, then GoatCounter's dashboard in a frame with a pine bar like the header */
+.an-owner-body { row-gap: 32px; }
+.an-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px; }
+.an-panel { grid-column: 1 / -1; border: 1px solid var(--rule-strong); background: var(--canvas); scroll-margin-top: 96px; }
+.an-panel-bar {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px;
+  padding: 10px 14px; background: var(--brand); color: var(--tea); border-bottom: 2px solid var(--lime); font-size: .6875rem;
+}
+.an-lock { display: inline-flex; align-items: center; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
+.an-lock svg { width: 14px; height: 14px; flex: 0 0 auto; color: var(--lime); }
+.an-close {
+  font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--tea); background: transparent;
+  border: 1px solid currentColor; border-radius: 2px; min-height: 36px; padding: 0 14px; cursor: pointer;
+  transition: background-color var(--t-hover, .2s) var(--ease, ease), color var(--t-hover, .2s) var(--ease, ease);
+}
+.an-close:focus-visible { outline-color: var(--lime); }
+@media (hover: hover) and (pointer: fine) {
+  .an-close:hover { background: var(--lime); border-color: var(--lime); color: var(--pine); }
+}
+/* GoatCounter's own page is light; the frame keeps it on white so it reads as intended */
+.an-frame iframe { display: block; width: 100%; height: min(80vh, 920px); min-height: 520px; border: 0; background: #FFFFFF; }
+.an-note { padding: 14px 16px; border-top: 1px solid var(--rule); font-size: .875rem; line-height: 1.6; color: var(--copy); }
+
+@media (min-width: 900px) {
+  .an-total, .an-facts, .an-actions { grid-column: 4 / -1; }
+}

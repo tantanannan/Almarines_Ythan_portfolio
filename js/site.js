@@ -110,44 +110,56 @@
   }
   /* After the page's own scripts, so a project page is recorded with its project title */
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', track); else track();
-  /* "Recorded Portfolio Views": fetched once, when the footer comes near the screen.
+  /* The site-wide total, as GoatCounter formats it ("1,234"). One request per page, shared by the
+     footer and the Analytics page (Site.totalViews); a failed request may be tried again. */
+  var totalReq = null;
+  function totalViews() {
+    if (totalReq) return totalReq;
+    if (!window.fetch) return Promise.reject(new Error('fetch'));
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
+    totalReq = fetch(GC + '/counter/TOTAL.json', { signal: ctrl ? ctrl.signal : undefined, credentials: 'omit' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) {
+        clearTimeout(timer);
+        var n = d && typeof d.count === 'string' ? d.count.trim() : '';
+        if (!/^\d[\d\s,.  ']*$/.test(n)) throw new Error('count');
+        return n;
+      })
+      .catch(function (err) { clearTimeout(timer); totalReq = null; throw err; });
+    return totalReq;
+  }
+  /* "Recorded Portfolio Views" in the footer: fetched when the footer comes near the screen.
      Hidden without JavaScript; says "Loading" while it waits and "Unavailable" if the service fails. */
   var views = document.querySelector('[data-views]');
   if (views) {
     var viewsN = views.querySelector('[data-views-n]');
     views.hidden = false;
-    var getViews = function () {
-      var ctrl = window.AbortController ? new AbortController() : null;
-      var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
-      fetch(GC + '/counter/TOTAL.json', { signal: ctrl ? ctrl.signal : undefined, credentials: 'omit' })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function (d) {
-          var n = d && typeof d.count === 'string' ? d.count.trim() : '';
-          if (!/^\d[\d\s,.  ']*$/.test(n)) throw new Error('count');
-          viewsN.textContent = n;
-          views.setAttribute('data-state', 'ready');
-        })
-        .catch(function () {
-          viewsN.textContent = 'Unavailable';
-          views.setAttribute('data-state', 'error');
-        })
-        .then(function () { clearTimeout(timer); });
+    var showViews = function () {
+      totalViews().then(function (n) {
+        viewsN.textContent = n;
+        views.setAttribute('data-state', 'ready');
+      }, function () {
+        viewsN.textContent = 'Unavailable';
+        views.setAttribute('data-state', 'error');
+      });
     };
-    if ('IntersectionObserver' in window && window.fetch) {
+    if ('IntersectionObserver' in window) {
       var vio = new IntersectionObserver(function (entries) {
         if (!entries[0].isIntersecting) return;
         vio.disconnect();
-        getViews();
+        showViews();
       }, { rootMargin: '0px 0px 600px 0px' });
       vio.observe(views);
-    } else if (window.fetch) getViews();
-    else { viewsN.textContent = 'Unavailable'; views.setAttribute('data-state', 'error'); }
+    } else showViews();
   }
 
   /* Called by each page once its content is in place */
   window.Site = {
     reduce: reduce,
     lite: lite,
+    totalViews: totalViews,
+    goatcounter: GC,
     /* Things below the first screen arrive as they scroll in. At rest, the page is always complete:
        only elements below the fold are ever hidden, and only while this script runs.
        data-stagger="selector" reveals those children in sequence when the group arrives;

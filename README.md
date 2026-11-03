@@ -218,3 +218,25 @@ Before you push, check `git status`: only website files should be listed. Keep p
 (original certificates, the original CV, PSDs) outside this folder; `../private/` is the place.
 To add a project, follow section 4: `projects/_template` is still here on your computer.
 If you ever change the CV, make the public copy without your street address before uploading.
+
+## 11. Analytics (GoatCounter, free)
+
+Page views are counted with GoatCounter's free hosted service: no cookies, no personal data.
+
+- **Tracking:** `js/site.js` loads GoatCounter's `count.js` once on every page (homepage, project
+  pages, Analytics page). Your site address is the `GC` line in that file. Visits from your own
+  computer (localhost, or opening the file directly) are never counted.
+- **Public numbers:** the footer of every page and the Analytics page (`analytics.html`) show
+  **Recorded Portfolio Views**, GoatCounter's site-wide `TOTAL`. Nothing else is public.
+  GoatCounter refreshes this total up to every four hours.
+- **Your private dashboard:** https://almarinesythan.goatcounter.com (sign in with your
+  GoatCounter email and password). It is also on the Analytics page under **Owner Analytics**.
+  Bookmark it; it is not linked anywhere as an admin link.
+- **GoatCounter settings that must stay this way** (Settings on your dashboard):
+  - "Allow adding visitor counts on your website": **on** (the public total needs it).
+  - "Sites that can embed GoatCounter": `https://tantanannan.github.io` (for Owner Analytics).
+  - "Dashboard viewable by": **logged in users only**. Never make an access token and never put
+    one in the site: anyone could read it.
+- **Leave out your own visits:** open
+  https://tantanannan.github.io/Almarines_Ythan_portfolio/#toggle-goatcounter once in each browser
+  you use. Do it again to undo.
