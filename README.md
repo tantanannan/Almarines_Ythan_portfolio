@@ -229,7 +229,10 @@ stored, only anonymous totals. A reload or a return to the same page within 8 ho
   computer (localhost, or opening the file directly) are never counted.
 - **Public numbers:** the footer of every page and the Views page (`analytics.html`) show
   **Recorded Portfolio Views**, GoatCounter's site-wide `TOTAL`. Nothing else is public.
-  GoatCounter refreshes this total up to every four hours.
+  The total is asked for as `start=2026-11-03` (when tracking began) to an `end` date two days ahead,
+  worked out from today's date (`TRACKING_START` and `totalURL()` in `js/site.js`). The date range gives
+  a fresh GoatCounter cache entry every day: GoatCounter can keep serving an old count for up to 12 hours,
+  so the total updates at least daily (at 00:00 UTC, 8:00 AM in the Philippines), usually every few hours.
 - **Your private dashboard:** https://almarinesythan.goatcounter.com (sign in with your
   GoatCounter email and password). It is also on the Views page under **Owner Analytics**.
   Bookmark it; it is not linked anywhere as an admin link.
