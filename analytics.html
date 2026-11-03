@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16.png">
   <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
-  <meta name="description" content="Recorded views for the From Sketch to Screen portfolio, counted with privacy-friendly GoatCounter analytics.">
+  <meta name="description" content="Recorded homepage visits for the From Sketch to Screen portfolio, counted with privacy-friendly GoatCounter analytics.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap">
@@ -21,7 +21,7 @@
 </head>
 <!--
   ANALYTICS PAGE. Two views on one page:
-  - Public: the site-wide total of recorded page views (GoatCounter's public TOTAL counter, via js/site.js).
+  - Public: recorded visits to the homepage only (GoatCounter's public page counter, via js/site.js).
   - Owner: GoatCounter's own dashboard in a frame, opened by the Owner Analytics button. GoatCounter asks
     for the owner's sign-in there; this page holds no passwords, tokens or keys.
   The page code is js/analytics.js; its styles are css/analytics.css.
@@ -87,17 +87,17 @@
 </div>
 
 <main id="main">
-  <!-- PUBLIC VIEW: what everyone sees. Only the site-wide total, never pages, sources or places. -->
+  <!-- PUBLIC VIEW: recorded homepage visits only, never private traffic statistics. -->
   <section class="section an-public" id="views" aria-labelledby="an-title">
     <div class="wrap grid sec-head">
       <p class="sec-index mono"><span class="n">09</span><span>Views</span></p>
-      <h1 class="sec-title" id="an-title">Portfolio traffic, <em>counted openly</em></h1>
-      <p class="sec-dek">A public total of the views recorded across this portfolio. Detailed statistics are private and stay behind the owner&rsquo;s GoatCounter sign-in.</p>
+      <h1 class="sec-title" id="an-title">Homepage traffic, <em>counted openly</em></h1>
+      <p class="sec-dek">This public counter shows recorded visits to the portfolio homepage only. Project-page activity is tracked separately in the private dashboard behind the owner&rsquo;s GoatCounter sign-in.</p>
     </div>
 
     <div class="wrap grid an-grid">
       <div class="an-total" data-total data-state="loading">
-        <p class="an-total-label mono"><svg class="eye" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>Recorded Portfolio Views</p>
+        <p class="an-total-label mono"><svg class="eye" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>Homepage Visits</p>
         <p class="an-total-n" data-total-n aria-hidden="true">&mdash;</p>
         <p class="an-total-status" data-total-status role="status">Loading the latest total&hellip;</p>
         <button class="btn btn-outline an-retry" type="button" data-total-retry hidden>Try again</button>
@@ -105,10 +105,10 @@
       </div>
 
       <dl class="an-facts reveal">
-        <div><dt class="mono">What it counts</dt><dd>A view each time someone opens the homepage, a project page or this page. Reloading or returning to the same page within eight hours is not counted again.</dd></div>
-        <div><dt class="mono">Not people</dt><dd>One visitor who opens several pages records several views, so this is not a count of people.</dd></div>
-        <div><dt class="mono">How fresh</dt><dd>The public total updates at least once a day, usually every few hours, so the newest views can take a while to appear.</dd></div>
-        <div><dt class="mono">Not counted</dt><dd>Bots, local test copies of the site, and browsers that block analytics.</dd></div>
+        <div><dt class="mono">What it counts</dt><dd>Recorded visits to the homepage only, including its index.html URL. Visits to project pages or this Analytics page do not increase the public counter. Repeated homepage views in the same recognized eight-hour session normally do not count again.</dd></div>
+        <div><dt class="mono">Not people</dt><dd>This is not the number of unique people or devices. A returning visitor may be counted again in a later session, and someone who only opens a direct project link is not included in this public total.</dd></div>
+        <div><dt class="mono">How fresh</dt><dd>The public counter uses cached GoatCounter data. A daily-changing date range helps retrieve fresher results, but the latest homepage visits may still take hours to appear.</dd></div>
+        <div><dt class="mono">Not counted</dt><dd>Visits to project or Analytics pages (in this public homepage total), bots, local test copies, and browsers that block analytics.</dd></div>
         <div><dt class="mono">Privacy</dt><dd>Counted with <a href="https://www.goatcounter.com/help/privacy" target="_blank" rel="noopener">GoatCounter</a>, privacy-friendly analytics. It sets no cookies and stores nothing in your browser, keeps no IP addresses or visitor IDs, and records only anonymous totals such as page, day, country and browser.</dd></div>
       </dl>
     </div>
@@ -183,7 +183,7 @@
     </div>
     <div class="foot-row mono">
       <span>&copy; 2026 Ythan P. Almarines. All rights reserved.</span>
-      <p class="foot-views" data-views hidden><svg class="eye" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg><span>Recorded Portfolio Views</span> <span class="foot-views-n" data-views-n>Loading&hellip;</span></p> <!-- Filled in by js/site.js from GoatCounter -->
+      <p class="foot-views" data-views hidden><svg class="eye" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg><span>Homepage Visits</span> <span class="foot-views-n" data-views-n>Loading&hellip;</span></p> <!-- Filled in by js/site.js from GoatCounter -->
       <a href="#main">Back to top <span aria-hidden="true">&uarr;</span></a>
       <p class="foot-privacy">Visits are counted with <a href="https://www.goatcounter.com/help/privacy" target="_blank" rel="noopener">GoatCounter</a>, privacy-friendly analytics: no cookies, no IP addresses or visitor IDs stored, only anonymous totals.</p>
     </div>
