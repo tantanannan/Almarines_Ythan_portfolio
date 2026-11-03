@@ -93,6 +93,57 @@
   });
   window.addEventListener('resize', function () { if (isOpen() && window.innerWidth >= 1100) closeMenu(false); });
 
+  /* Analytics: GoatCounter's free hosted service (no cookies, no personal data).
+     count.js sends one page view per page load; it skips localhost, file:// and bots on its own.
+     The detailed statistics stay private at the dashboard address below (GoatCounter login).
+     The footer shows only the site-wide total, from GoatCounter's public TOTAL counter. */
+  var GC = 'https://almarinesythan.goatcounter.com';
+  function track() {
+    if (document.querySelector('script[data-goatcounter]')) return; // never load it twice
+    /* One path per page: /projects/camou-poster/ and .../index.html count together; query strings are ignored */
+    window.goatcounter = { no_events: true, path: function () { return location.pathname.replace(/index\.html$/, '') || '/'; } };
+    var gc = document.createElement('script');
+    gc.async = true;
+    gc.src = 'https://gc.zgo.at/count.js';
+    gc.setAttribute('data-goatcounter', GC + '/count');
+    document.body.appendChild(gc);
+  }
+  /* After the page's own scripts, so a project page is recorded with its project title */
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', track); else track();
+  /* "Recorded Portfolio Views": fetched once, when the footer comes near the screen.
+     Hidden without JavaScript; says "Loading" while it waits and "Unavailable" if the service fails. */
+  var views = document.querySelector('[data-views]');
+  if (views) {
+    var viewsN = views.querySelector('[data-views-n]');
+    views.hidden = false;
+    var getViews = function () {
+      var ctrl = window.AbortController ? new AbortController() : null;
+      var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
+      fetch(GC + '/counter/TOTAL.json', { signal: ctrl ? ctrl.signal : undefined, credentials: 'omit' })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (d) {
+          var n = d && typeof d.count === 'string' ? d.count.trim() : '';
+          if (!/^\d[\d\s,.  ']*$/.test(n)) throw new Error('count');
+          viewsN.textContent = n;
+          views.setAttribute('data-state', 'ready');
+        })
+        .catch(function () {
+          viewsN.textContent = 'Unavailable';
+          views.setAttribute('data-state', 'error');
+        })
+        .then(function () { clearTimeout(timer); });
+    };
+    if ('IntersectionObserver' in window && window.fetch) {
+      var vio = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        vio.disconnect();
+        getViews();
+      }, { rootMargin: '0px 0px 600px 0px' });
+      vio.observe(views);
+    } else if (window.fetch) getViews();
+    else { viewsN.textContent = 'Unavailable'; views.setAttribute('data-state', 'error'); }
+  }
+
   /* Called by each page once its content is in place */
   window.Site = {
     reduce: reduce,
