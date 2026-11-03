@@ -112,14 +112,25 @@
   /* After the page's own scripts, so a project page is recorded with its project title */
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', track); else track();
   /* The site-wide total, as GoatCounter formats it ("1,234"). One request per page, shared by the
-     footer and the Views page (Site.totalViews); a failed request may be tried again. */
+     footer and the Views page (Site.totalViews); a failed request may be tried again.
+     Asked for as a date range: GoatCounter keeps each counter answer in its own cache, and an answer
+     older than 4 hours can stay stuck for up to 8 more (README, Analytics). A range that moves with the
+     date gives a fresh cache entry every day. start is the day tracking began, so the total is still
+     every view since then; end is two days ahead in UTC (GoatCounter counts whole UTC hours up to the
+     start of the end date), so today is always included, even on a device whose clock is a day behind. */
+  var TRACKING_START = '2026-11-03';
+  function totalURL() {
+    var end = new Date(Date.now() + 2 * 864e5).toISOString().slice(0, 10);
+    return GC + '/counter/TOTAL.json?start=' + TRACKING_START + '&end=' + end;
+  }
   var totalReq = null;
   function totalViews() {
     if (totalReq) return totalReq;
     if (!window.fetch) return Promise.reject(new Error('fetch'));
     var ctrl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
-    totalReq = fetch(GC + '/counter/TOTAL.json', { signal: ctrl ? ctrl.signal : undefined, credentials: 'omit' })
+    /* no-cache: always ask GoatCounter, instead of reusing a copy the browser kept for 4 hours */
+    totalReq = fetch(totalURL(), { signal: ctrl ? ctrl.signal : undefined, credentials: 'omit', cache: 'no-cache' })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (d) {
         clearTimeout(timer);
