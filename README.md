@@ -225,13 +225,13 @@ Visits are counted with GoatCounter's free hosted service: no cookies, no IP add
 stored, only anonymous totals. A reload or a return to the same page within 8 hours is not counted again.
 
 - **Tracking:** `js/site.js` loads GoatCounter's `count.js` once on every page (homepage, project
-  pages, Analytics page). Your site address is the `GC` line in that file. Visits from your own
+  pages, Views page). Your site address is the `GC` line in that file. Visits from your own
   computer (localhost, or opening the file directly) are never counted.
-- **Public numbers:** the footer of every page and the Analytics page (`analytics.html`) show
+- **Public numbers:** the footer of every page and the Views page (`analytics.html`) show
   **Recorded Portfolio Views**, GoatCounter's site-wide `TOTAL`. Nothing else is public.
   GoatCounter refreshes this total up to every four hours.
 - **Your private dashboard:** https://almarinesythan.goatcounter.com (sign in with your
-  GoatCounter email and password). It is also on the Analytics page under **Owner Analytics**.
+  GoatCounter email and password). It is also on the Views page under **Owner Analytics**.
   Bookmark it; it is not linked anywhere as an admin link.
 - **GoatCounter settings that must stay this way** (Settings on your dashboard):
   - "Allow adding visitor counts on your website": **on** (the public total needs it).

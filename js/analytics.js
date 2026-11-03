@@ -1,5 +1,5 @@
 /* ============================================================
-   analytics.js — the Analytics page only.
+   analytics.js — the Views page only (analytics.html).
    Public view: the site-wide total from GoatCounter (Site.totalViews in site.js).
    Owner view: GoatCounter's own dashboard in a frame. GoatCounter handles the sign-in;
    nothing secret is in this file, and the frame shows only what GoatCounter allows.

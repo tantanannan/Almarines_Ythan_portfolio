@@ -112,7 +112,7 @@
   /* After the page's own scripts, so a project page is recorded with its project title */
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', track); else track();
   /* The site-wide total, as GoatCounter formats it ("1,234"). One request per page, shared by the
-     footer and the Analytics page (Site.totalViews); a failed request may be tried again. */
+     footer and the Views page (Site.totalViews); a failed request may be tried again. */
   var totalReq = null;
   function totalViews() {
     if (totalReq) return totalReq;
