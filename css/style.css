@@ -406,8 +406,14 @@ body.menu-open { overflow: hidden; }
 .scribble { position: absolute; left: 0; width: 100%; bottom: -.14em; height: .2em; overflow: visible; color: var(--marker); }
 .scribble path { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .scribble path { stroke-width: 2.2; }
-.intro-tagline {
-  margin-top: clamp(14px, 2.4svh, 26px); max-width: 32ch;
+/* Professional title: a catalogue label between the name and the tagline, led by a short marker rule */
+.intro-role {
+  margin-top: clamp(20px, 3.2svh, 34px); color: var(--marker-ink); font-weight: 500;
+  font-size: clamp(.8125rem, .65rem + .55vw, 1.0625rem); letter-spacing: .16em;
+}
+.intro-role > span { display: inline-flex; align-items: center; gap: 12px; }
+.intro-role > span::before { content: ""; width: 28px; height: 1.5px; background: currentColor; flex: 0 0 auto; }.intro-tagline {
+  margin-top: clamp(10px, 1.6svh, 18px); max-width: 32ch;
   font-family: var(--f-body); font-weight: 500; font-size: clamp(1.05rem, .7rem + 1.3vw, 1.55rem); line-height: 1.4; letter-spacing: -.01em;
 }
 .intro-tagline > span { display: inline-block; }
@@ -959,6 +965,7 @@ body.menu-open { overflow: hidden; }
 .motion .in-hi { animation: mask-up calc(700ms * var(--k)) var(--ease) calc(200ms * var(--k)) both; }
 .motion .in-name { animation: mask-up calc(850ms * var(--k)) var(--ease) calc(300ms * var(--k)) both; }
 .motion .scribble path { animation: pencil calc(600ms * var(--k)) var(--ease-io) calc(820ms * var(--k)) both; }
+.motion .intro-role > span { animation: rise calc(520ms * var(--k)) var(--ease) calc(480ms * var(--k)) both; }
 .motion .intro-tagline > span { animation: rise calc(560ms * var(--k)) var(--ease) calc(560ms * var(--k)) both; }
 .motion .cue-ring { animation: rise calc(500ms * var(--k)) var(--ease) calc(950ms * var(--k)) both; }
 @keyframes grow-y { from { transform: scaleY(0); } }
@@ -975,6 +982,7 @@ body.menu-open { overflow: hidden; }
 .intro::before { --sy: 16svh; --ss: 1.06; }
 .intro-photo { --sy: 22svh; --ss: .9; --so: .15; }
 .intro-name { --sy: 14svh; --so: 0; }
+.intro-role { --sy: 12svh; --so: 0; --end: 65%; --rate: 1.54; }
 .intro-tagline { --sy: 10svh; --so: 0; --end: 60%; --rate: 1.67; }
 .intro-cue { --so: 0; --end: 18%; --rate: 5.5; }
 @keyframes intro-exit { to { transform: translate3d(0, var(--sy, 0px), 0) scale(var(--ss, 1)); opacity: var(--so, 1); } }
