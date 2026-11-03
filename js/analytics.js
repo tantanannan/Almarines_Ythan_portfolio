@@ -20,7 +20,7 @@
       box.setAttribute('data-state', 'ready');
       num.textContent = n;
       num.removeAttribute('aria-hidden');
-      status.textContent = 'Recorded page views across the whole portfolio, from GoatCounter.';
+      status.textContent = 'Recorded views across the whole portfolio, from GoatCounter.';
     }, function () {
       box.setAttribute('data-state', 'error');
       status.textContent = 'The total is unavailable right now. GoatCounter could not be reached.';

@@ -221,7 +221,8 @@ If you ever change the CV, make the public copy without your street address befo
 
 ## 11. Analytics (GoatCounter, free)
 
-Page views are counted with GoatCounter's free hosted service: no cookies, no personal data.
+Visits are counted with GoatCounter's free hosted service: no cookies, no IP addresses or visitor IDs
+stored, only anonymous totals. A reload or a return to the same page within 8 hours is not counted again.
 
 - **Tracking:** `js/site.js` loads GoatCounter's `count.js` once on every page (homepage, project
   pages, Analytics page). Your site address is the `GC` line in that file. Visits from your own

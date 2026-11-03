@@ -94,7 +94,8 @@
   window.addEventListener('resize', function () { if (isOpen() && window.innerWidth >= 1100) closeMenu(false); });
 
   /* Analytics: GoatCounter's free hosted service (no cookies, no personal data).
-     count.js sends one page view per page load; it skips localhost, file:// and bots on its own.
+     count.js reports each page load once; GoatCounter records it as a view unless the same visitor
+     opened that page in the last 8 hours. It skips localhost, file:// and bots on its own.
      The detailed statistics stay private at the dashboard address below (GoatCounter login).
      The footer shows only the site-wide total, from GoatCounter's public TOTAL counter. */
   var GC = 'https://almarinesythan.goatcounter.com';
